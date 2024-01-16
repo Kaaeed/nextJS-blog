@@ -1,7 +1,7 @@
 import Link from "next/link";
 import classes from "./post-item.module.css";
 import Image from "next/image";
-import pillarsImage from "../../public/images/posts/getting-started/pillars-of-creation.png";
+// import pillarsImage from "../../public/images/posts/getting-started/pillars-of-creation.png";
 
 function PostItem(props) {
   const { title, image, excerpt, date, slug } = props.post;
@@ -12,14 +12,14 @@ function PostItem(props) {
     year: "numeric",
   });
 
-  // const imagePath = `/images/posts/${slug}/${image}`;
+  const imagePath = `/images/posts/${slug}/${image}`;
   const linkPath = `/posts/${slug}`;
 
   return (
     <li className={classes.post}>
       <Link href={linkPath}>
         <div className={classes.image}>
-          <Image src={pillarsImage} alt={title} />
+          <Image src={imagePath} alt={title} width={600} height={600} />
         </div>
         <div className={classes.content}>
           <h3>{title}</h3>
