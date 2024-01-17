@@ -25,10 +25,11 @@ async function handler(req, res) {
 
     let client;
 
+    const connectionString = `mongodb+srv://${process.env.mongodb_name}:${process.env.mongodb_password}@${process.env.mongodb_clustername}.rakgjgb.mongodb.net/?retryWrites=true&w=majority`;
+
     try {
-      client = await MongoClient.connect(
-        "mongodb+srv://nextjsblog:nextjsblog@nextjs-blog.rakgjgb.mongodb.net/?retryWrites=true&w=majority"
-      );
+      // "mongodb+srv://nextjsblog:nextjsblog@nextjs-blog.rakgjgb.mongodb.net/?retryWrites=true&w=majority"
+      client = await MongoClient.connect(connectionString);
     } catch (error) {
       res.status(500).json({ message: "Could not connect to the database." });
       return;
