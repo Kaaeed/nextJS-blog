@@ -25,7 +25,7 @@ async function handler(req, res) {
 
     let client;
 
-    const connectionString = `mongodb+srv://${process.env.mongodb_name}:${process.env.mongodb_password}@${process.env.mongodb_clustername}.rakgjgb.mongodb.net/?retryWrites=true&w=majority`;
+    const connectionString = `${process.env.mongodb_name}:${process.env.mongodb_password}@${process.env.mongodb_clustername}`;
 
     try {
       // "mongodb+srv://nextjsblog:nextjsblog@nextjs-blog.rakgjgb.mongodb.net/?retryWrites=true&w=majority"
